@@ -1,9 +1,7 @@
-// Page 2: Scammed Page - Random Image Collage
+// collage function
 if (document.querySelector('.scammed-page')) {
     const collageContainer = document.getElementById('collageContainer');
     
-    // You'll add your images to assets/images/collage/
-    // This will automatically pick them up
     const images = [
         'assets/images/collage/img1.jpg',
         'assets/images/collage/img2.jpg',
@@ -12,24 +10,24 @@ if (document.querySelector('.scammed-page')) {
         'assets/images/collage/img5.jpg',
     ];
     
-    // Generate random positioned images
+    // random pos
     images.forEach((imgSrc, index) => {
         const img = document.createElement('img');
         img.src = imgSrc;
         
-        // Random size between 150-300px
+        // random size
         const size = Math.random() * 150 + 150;
         img.style.width = size + 'px';
         img.style.height = size + 'px';
         
-        // Random position
+        // random position
         img.style.left = Math.random() * 80 + '%';
         img.style.top = Math.random() * 80 + '%';
         
-        // Random rotation
+        // random rotation
         img.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
         
-        // Handle image load errors gracefully
+        // image load error
         img.onerror = function() {
             this.style.display = 'none';
         };
@@ -38,19 +36,19 @@ if (document.querySelector('.scammed-page')) {
     });
 }
 
-// Page 3: Question Page - Interactive NO Button
+// question page - no button moves
 if (document.querySelector('.question-page')) {
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
     let dodgeCount = 0;
     
-    // Initial button sizes
+    // initial button sizes
     let yesBtnSize = 1;
     
     noBtn.addEventListener('mouseenter', function() {
         dodgeCount++;
         
-        // Move NO button to random position
+        // move to random spot
         const maxX = window.innerWidth - noBtn.offsetWidth - 100;
         const maxY = window.innerHeight - noBtn.offsetHeight - 100;
         
@@ -62,25 +60,24 @@ if (document.querySelector('.question-page')) {
         noBtn.style.top = randomY + 'px';
         noBtn.style.transition = 'all 0.3s ease';
         
-        // Make YES button bigger and more pink
+        // yes gets bigger and pinker
         yesBtnSize += 0.2;
         yesBtn.style.transform = `scale(${yesBtnSize})`;
         
-        // Gradually change to more reddish pink
         const pinkness = Math.min(255, 255 - (dodgeCount * 10));
         const redness = Math.min(255, 107 + (dodgeCount * 15));
         yesBtn.style.backgroundColor = `rgb(${redness}, ${pinkness}, 157)`;
     });
     
-    // Prevent clicking NO button (extra safety)
+    // preventing cliking no button
     noBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        // Trigger mouseenter to make it dodge again
+        // mouseenter to move it again
         noBtn.dispatchEvent(new MouseEvent('mouseenter'));
     });
 }
 
-// Add floating hearts animation on question page
+// floaty hearts
 if (document.querySelector('.question-page')) {
     const heartsBackground = document.querySelector('.hearts-background');
     
