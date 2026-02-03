@@ -1,4 +1,4 @@
-/* Global Styles */
+/* global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +37,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Page 1: Welcome Page */
+/* welcome */
 .welcome-page {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -70,7 +70,7 @@ button:hover {
     background-color: #ffed4e;
 }
 
-/* Page 2: Scammed Page */
+/* scammed */
 .scammed-page {
     background-color: #f0f0f0;
     position: relative;
@@ -127,7 +127,7 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Page 3: Question Page */
+/* question */
 .question-page {
     background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
     position: relative;
@@ -211,7 +211,7 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Page 4: Thanks Page */
+/* thanks */
 .thanks-page {
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
 }
@@ -250,7 +250,7 @@ button:hover {
     border-radius: 10px;
 }
 
-/* Responsive Design */
+/* responsive */
 @media (max-width: 768px) {
     .goofy-title {
         font-size: 2.5rem;
